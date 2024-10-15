@@ -9,25 +9,25 @@
 body {
     background-color: black;
     color: white;
-    font-family: Verdana, sans-serif;
+    font-family: Verdana;
     text-align: center;
 }
 
 /* Header Styles */
 header {
-    margin-top: 50px;
+    margin-top: 35px;
 }
 
 header h1 {
     font-size: 50px;
     font-weight: normal;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 header a {
     color: aquamarine;
     font-size: 16px;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 /* Video container styles */
@@ -36,7 +36,7 @@ header a {
 }
 
 .video-container video {
-    max-width: 300px;
+    max-width: 400px;
 }
 
 /* Description section */
@@ -47,12 +47,13 @@ header a {
 .description h2 {
     font-size: 42px;
     font-weight: 300;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
     color: white;
 }
 
 .description p {
     font-size: 21px;
+    margin-bottom: -25px;
 }
 
 /* Landscape Image Container */
@@ -74,21 +75,27 @@ footer {
 }
 
 footer .icon {
-    margin-bottom: 20px;
+    margin-top: -30px;
 }
 
 footer .icon img {
-    width: 50px;
+    width: 70px;
 }
 
 footer h2 {
     font-size: 42px;
-    margin: 20px 0;
+    margin: 50px 0;
+}
+
+footer a {
+    color: aquamarine;
+    font-size: 16px;
+    text-decoration: underline;
 }
 
 footer p {
     color: gray;
-    font-size: 14px;
+    font-size: 24px;
     text-align: right;
     margin-right: 20px;
 }
