@@ -58,6 +58,7 @@ header a {
 /* Landscape Image Container */
 .landscape-container {
     margin: 40px 0;
+    text-align: center;
 }
 
 .landscape-container {
