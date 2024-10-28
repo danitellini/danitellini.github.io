@@ -9,7 +9,7 @@ ingredients = {
     "Dragon Scale": {"effect": "Fire Resistance", "power_level": 5, "negates": ["Strength Enhancement"]},
     "Mandrake Root": {"effect": "Healing", "power_level": 4, "negates": ["Poison"]},
     "Phoenix Feather": {"effect": "Revitalization", "power_level": 5, "negates": ["Paralysis"]},
-    "Witch's Hair": {"effect": "Transformation", "power_level": 3, "negates": ["Protection"]},
+    "Witch Hair": {"effect": "Transformation", "power_level": 3, "negates": ["Protection"]},
     "Troll Slime": {"effect": "Strength Enhancement", "power_level": 4, "negates": ["Fire Resistance"]},
     "Ghostly Mist": {"effect": "Evasion", "power_level": 3, "negates": ["Enhanced Agility"]},
     "Zombie Toenail": {"effect": "Paralysis", "power_level": 2, "negates": ["Revitalization"]},
@@ -198,6 +198,10 @@ def view_potion_log():
             print(f"Outcome: {potion['outcome']}")
             print(f"Timestamp: {potion['timestamp']}\n")
         time.sleep(1)
+
+# -- Custom Title-Case Function (Witch's Hair test problem solution) --
+def custom_title_case(word):
+    return ' '.join[w[[0].upper() + w[1:].lower() if w else ' ' in word.split()]]
 
 # - Function to Brew a Potion -
 def brew_potion():
