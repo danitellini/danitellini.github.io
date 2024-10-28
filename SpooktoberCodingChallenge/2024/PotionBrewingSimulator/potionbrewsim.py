@@ -9,7 +9,7 @@ ingredients = {
     "Dragon Scale": {"effect": "Fire Resistance", "power_level": 5, "negates": ["Strength Enhancement"]},
     "Mandrake Root": {"effect": "Healing", "power_level": 4, "negates": ["Poison"]},
     "Phoenix Feather": {"effect": "Revitalization", "power_level": 5, "negates": ["Paralysis"]},
-    "Witch Hair": {"effect": "Transformation", "power_level": 3, "negates": ["Protection"]},
+    "Witch's Hair": {"effect": "Transformation", "power_level": 3, "negates": ["Protection"]},
     "Troll Slime": {"effect": "Strength Enhancement", "power_level": 4, "negates": ["Fire Resistance"]},
     "Ghostly Mist": {"effect": "Evasion", "power_level": 3, "negates": ["Enhanced Agility"]},
     "Zombie Toenail": {"effect": "Paralysis", "power_level": 2, "negates": ["Revitalization"]},
@@ -201,7 +201,7 @@ def view_potion_log():
 
 # -- Custom Title-Case Function (Witch's Hair test problem solution) --
 def custom_title_case(word):
-    return ' '.join[w[[0].upper() + w[1:].lower() if w else ' ' in word.split()]]
+    return ' '.join([word[0].upper() + word[1:].lower() if word else ' ' for word in word.split()])
 
 # - Function to Brew a Potion -
 def brew_potion():
@@ -212,10 +212,10 @@ def brew_potion():
         print(f"- {ingredient_name}: {details['effect']}")
     ingredient_list = []
     while True:
-        ingredient = input("Add an ingredient (or type 'done' to finish): ").strip()
-        if ingredient.lower() == "done":
+        ingredient = custom_title_case(input("Add an ingredient (or type 'done' to finish): ").strip())
+        if ingredient == "Done":
             break
-        elif ingredient.title() in ingredients:
+        elif ingredient in ingredients:
             ingredient_list.append(ingredient)
             print(f"Added {ingredient} to the potion.")
         else:
