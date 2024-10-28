@@ -167,8 +167,14 @@ def save_potion(name, ingredients, effects, outcome="Success"):
 
 # - Function to Save the Potion Log to a File -
 def save_log_to_file(filename="potion_log.json"):
+    try:
+        with open(filename, "r") as file:
+            existing_log = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_log = []
+    existing_log.extend(potion_log)
     with open(filename, "w") as file:
-        json.dump(potion_log, file, indent=4)
+        json.dump(existing_log, file, indent=4)
     print("Potion log saved to file!")
 
 # - Function to Display ASCII Art for Each Effect -
@@ -185,15 +191,39 @@ def view_potion_log():
         print("The potion log is empty.")
     else:
         print("\nPotion Log:")
+        for potion in potion_log:
+            print(f"Name: {potion['name']}")
+            print(f"Ingredients: {', '.join(potion['ingredients'])}")
+            print(f"Effects: {', '.join(potion['effects'])}")
+            print(f"Outcome: {potion['outcome']}")
+            print(f"Timestamp: {potion['timestamp']}\n")
+        time.sleep(1)
 
 # - Function to Brew a Potion -
 def brew_potion():
     print("Enter a name for your potion: ")
     name = input()
-
     print("\nAvailable Ingredients:")
-    for ingredient_name in ingredients:
-        print(f"- {ingredient_name}") # make it so that the effect is also provided in the list
+    for ingredient_name, details in ingredients.items():
+        print(f"- {ingredient_name}: {details['effect']}")
+    ingredient_list = []
+    while True:
+        ingredient = input("Add an ingredient (or type 'done' to finish): ").strip()
+        if ingredient.lower() == "done":
+            break
+        elif ingredient.title() in ingredients:
+            ingredient_list.append(ingredient)
+            print(f"Added {ingredient} to the potion.")
+        else:
+            print("Invalid ingredient. Please select from the available list.")
+        time.sleep(0.5)
+    print("\nBrewing your potion...")
+    time.sleep(2)
+    effects = determine_effects(ingredient_list)
+    outcome = "Success" if effects else "Failure"
+    save_potion(name, ingredient_list, list(effects.keys()), outcome)
+    print(f"\nFinal Potion Effects for {name}:")
+    display_ascii_art(effects.keys())
 
 # - Main Menu Function -
 def main_menu():
