@@ -5,7 +5,7 @@
 h1 {
     font-size: 100px;
     color: khaki;
-    margin: 0 auto;
+    text-align: center;
     background-image: url("https://content.codecademy.com/courses/freelance-1/unit-2/pattern.jpeg");
 }
 
@@ -19,10 +19,9 @@ h2 {
 }
 h3 {
     font-weight: bold;
-    font-size: 24px;
 }
 
-p span {
+p .price {
     display: inline-block;
 }
 
