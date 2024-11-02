@@ -2,16 +2,60 @@
 
 /* Body Styles */
 
-h1 {}
+h1 {
+    text-align: center;
+}
 
-h2 {}
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-transform: uppercase
+}
 
 /* Table Styles */
 
-table {}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
 
-thead {}
+thead {
+    color: black;
+}
 
-th {}
+th {
+    background-color: #4a90e2;
+    color: #fff;
+}
 
-tbody {}
+tbody {
+    color: black;
+}
+
+tr {
+    color: black;
+}
+
+td {
+    text-align: center
+}
+
+code {
+    font-family: monospace;
+    background-color: lightgrey;
+    color: #333;
+    padding: 2px 4px;
+    border-radius: 3px;
+    display: block;
+    white-space: pre-wrap;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
