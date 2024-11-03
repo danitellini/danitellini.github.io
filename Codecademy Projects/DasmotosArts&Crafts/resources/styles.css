@@ -9,7 +9,7 @@ h1 {
     background-image: url("https://content.codecademy.com/courses/freelance-1/unit-2/pattern.jpeg");
 }
 
-h1, h2, .price {
+h1, h2, span {
     font-weight: bold;
 }
 
@@ -21,11 +21,7 @@ h3 {
     font-weight: bold;
 }
 
-p .price {
-    display: inline-block;
-}
-
-.price {
+span {
     color: blue;
 }
 
